@@ -164,7 +164,7 @@ An HTTP API is an API that uses Hypertext Transfer Protocol as the communication
 ```
 
 <p align="center">
-<img src ="https://github.com/steadykyu/http/blob/master/img/http5_6.png" >
+<img src ="https://github.com/steadykyu/http/blob/master/img/http5_8.png" >
 </p>
 
 두 시스템(ex)클라, 서버) 사이의 소통 **protocol**(규약)을 http(hypertext Transfer **Protocol**) 로 사용하는 API를 HTTP API 라고한다.
