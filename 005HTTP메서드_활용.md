@@ -1,18 +1,23 @@
-# 1. 클라이언트에서 서버로 데이터 전송
+# 읽기 전에
 
-## 1.1 두가지의 데이터 전달 방식
+본 내용은 요청메세지의 시작 라인에 있는 http 메서드와 관련된 URL(리소스 + @) 을 중점적으로 보면 좋다.
 
-### 1.쿼리 파라미터를 통한 데이터 전송
+
+# 클라이언트에서 서버로 데이터 전송
+
+## 1. 두가지의 데이터 전달 방식
+
+### 1.1 쿼리 파라미터를 통한 데이터 전송
 
 - GET
 - 주로 정렬 필터(검색어)
 
-### 2. 메시지 바디를 이용
+### 1.2 메시지 바디를 이용
 
 - POST, PUT, PATCH
 - 회원 가입, 상품 주문, 리소스 등록, 리소스 변경
 
-## 1.2 4가지 상황
+## 2. 4가지 상황
 
 - 정적 데이터 조회
 
@@ -32,7 +37,7 @@
 
 아래 그림으로 더 구체적으로 이해해보자.
 
-### 1.2.1 정적 데이터 조회
+### 2.1 정적 데이터 조회
 
 <p align="center">
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_1.png" >
@@ -46,7 +51,7 @@ URL 식별자(경로) 만 입력해주고, 경로에 존재하는 image/jpeg를 
 - 조회는 GET 사용
 - 정적 데이터는 일반적으로 쿼리 파라미터 없이 리소스 경로로 단순하게 조회 가능
 
-### 1.2.2 동적 데이터 조회
+### 2.2 동적 데이터 조회
 
 <p align="center">
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_2.png" >
@@ -65,7 +70,7 @@ search 경로에 q = hello h1 = ko 가 입력되 있다. 이는 한국어이고,
 - GET은 쿼리 파라미터 사용해서 데이터를 전달
   - 이전 내용처럼 spec에서 GET도 메시지 바디로 데이터를 전송할 수는 있다고 했지만, 서버에서의 호환성의 이유로 실무에서 권장 되지 않는다.
 
-### 1.2.3 HTML Form 데이터 전송
+### 2.3 HTML Form 데이터 전송
 
 <p align="center">
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_3.png" >
@@ -112,7 +117,7 @@ GET이므로 메시지 바디가 아닌 url 경로의 쿼리 파라미터에 넣
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_5.png" >
 </p>
 
-### 1.2.4 mulipart/form-data
+#### mulipart/form-data
 
 <p align="center">
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_6.png" >
@@ -149,9 +154,9 @@ form tag와 사용자의 입력값이 들어오면, 요청 메시지는 Web brow
 
 detail option들의 내용은 사용때마다 API나 자료를 찾아보자.
 
-## 1.4 HTTP API 데이터 전송
+## 2.4 HTTP API 데이터 전송
 
-### 1.4.1 API 란?
+### 2.4.1 API 란?
 
 > 참고 API란?
 
@@ -169,7 +174,7 @@ An HTTP API is an API that uses Hypertext Transfer Protocol as the communication
 
 두 시스템(ex)클라, 서버) 사이의 소통 **protocol**(규약)을 http(hypertext Transfer **Protocol**) 로 사용하는 API를 HTTP API 라고한다.
 
-### 1.4.2 HTTP API 데이터 전송
+### 2.4.2 HTTP API 데이터 전송
 
 <p align="center">
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_7.png" >
@@ -200,7 +205,7 @@ An HTTP API is an API that uses Hypertext Transfer Protocol as the communication
 
   - 이전에는 XML이 표준이었으나 최근에는 JSON이 표준이 되었다.
 
-# 2. HTTP API 설계 예시
+### 2.4.3 HTTP API 설계 예시
 
 - 1.HTTP API - 컬렉션
 
@@ -221,9 +226,10 @@ An HTTP API is an API that uses Hypertext Transfer Protocol as the communication
 POST와 PUT은 둘다 리소스를 생성 할수 있다. 이 둘의 차이를 구별하려고 하면서 아래 내용을 보도록 하자.
 
 리소스 , 리소스 URI(리소스를 포함하며 세부 하위 디렉토리까지 전부 의미), 리소스 식별자를 잘 구분해서 읽자.
-## 2.1 회원 관리 시스템
 
-### 2.1.1 API 설계 - POST 기반 등록
+#### 1. 회원 관리 시스템
+
+##### API 설계 - POST 기반 등록
 
 - 회원 목록 /members -> GET
 
@@ -262,7 +268,7 @@ Content-Type: application/json
 
 - Post 이것도 저것도 애매할떄 사용한다.
 
-### 2.1.2 POST를 이용한 신규 자원 등록 특징
+##### POST를 이용한 신규 자원 등록 특징
 
 - 클라이언트는 등록될 리소스의 URI를 모른다.
   - 회원 등록 /members -> POST
@@ -285,9 +291,9 @@ Location: /members/100
 
 이러한 클라이언트와 서버의 형식을 컬렉션이라고 부르기로 정했다.
 
-## 2.2 파일 관리 시스템
+#### 2. 파일 관리 시스템
 
-### 2.2.1 API 설계 - PUT 기반 등록
+##### API 설계 - PUT 기반 등록
 
 - 파일 목록 /files -> GET
 
@@ -310,7 +316,7 @@ files를 폴더디렉토리라고 생각해보자.
 POST 대신 PUT이 파일을 등록해주기 때문에 POST는 원하는 기능을 만들어줄수 있다.
 여기에선 대량 파일 입력을 했다.
 
-### 2.2.2 PUT를 이용한 신규자원 등록 특징
+##### PUT를 이용한 신규자원 등록 특징
 
 - 클라이언트가 리소스 URI를 알고 있어야 한다.
 
@@ -333,7 +339,7 @@ POST 대신 PUT이 파일을 등록해주기 때문에 POST는 원하는 기능�
 
 POST와 PUT 를 이용한 신규자원 등록은 주로 POST 신규자원 등록을 사용하고, PUT은 특정 경우(파일등록)에만 사용한다.
 
-## 2.3 HTML FORM 사용
+#### 3. HTML FORM 사용
 
 - HTML FORM은 GET, POST만 지원
 
@@ -343,7 +349,7 @@ POST와 PUT 를 이용한 신규자원 등록은 주로 POST 신규자원 등록
 
 - **GET, POST만 지원하므로 제약이 있음**
 
-### 2.3.1 FORM 형식 설계
+##### FORM 형식 설계
 
 - 회원 목록 /members -> GET
 
@@ -394,7 +400,7 @@ HTML FORM 에서는 HTTP의 DELETE 메서드를 쓸수가 없다. 대신 /delete
 
 그렇다고 컨트롤 URI를 남발해서는 안된다. 최대한 URI(리소스) 설계 원칙 개념에 따라 설계를 하고, 메서드들로 해결이 안될때 컨트롤 URI를 사용하면 식으로 하자.
 
-## 2.4 정리
+#### 4. 정리
 
 - HTTP API - 컬렉션
   - POST 기반 등록
