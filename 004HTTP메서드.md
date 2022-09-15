@@ -238,11 +238,11 @@ URI 설계에서 한 종류의 URI(order)를 resource로 하는게 좋다고 했
   - 리소스가 없으면 생성
   - 쉽게 이야기해서 덮어버림
 
-- **중요! 클라이언트가 리소스를 식별**
-  - 클라이언트가 구체적인 리소스 위치를 알고 URI 지정
+- **중요! 클라이언트에서 리소스를 식별자를 보내주어야한다.**
+  - 클라이언트가 구체적인 리소스 위치를 알고 URI 지정해주어야 한다.
 
 ```
-PUT /members/100 HTTP/1.1       // resource의 위치를 알고 있다.
+PUT /members/100 HTTP/1.1       // resource의 식별자를 입력해 위치를 지정해준다.
 Content-Type: application/json
 {
  "username": "hello",
@@ -253,7 +253,7 @@ Content-Type: application/json
 - POST와 차이점
 
 ```
-POST /members HTTP/1.1          // 구체적인 resource 위치를 모른다.
+POST /members HTTP/1.1          // 구체적인 resource 위치를 모른다.(알아서 새로 만들어진다.)
 Content-Type: application/json
 {
  "username": "young",
