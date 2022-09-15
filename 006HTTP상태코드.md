@@ -183,7 +183,7 @@ POST
 > 일시적인 리다이렉션 - 예시
 
 <p align="center">
-<img src ="https://github.com/steadykyu/http/blob/master/img/http6_5.png" >
+<img src ="https://github.com/steadykyu/http/blob/master/img/http6_6.png" >
 </p>
 
 200대가 아닌 302 FOund를 준다.
