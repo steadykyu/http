@@ -175,6 +175,11 @@ POST
 
 실제로는 상품번호를 통해 서버에서 중복주문을 막기는 한다. 그래도 클라이언트 상에서도 일시적인 리다이렉션으로 막아줄 수 있다.
 
+> 새로고침시(재요청시) 중복주문 문제 발생
+<p align="center">
+<img src ="https://github.com/steadykyu/http/blob/master/img/http6_5.png" >
+</p>
+
 > 일시적인 리다이렉션 - 예시
 
 <p align="center">
