@@ -89,7 +89,7 @@ Content-Type 은 클라이언트와 서버끼리 이미 약속이 되어 있는 
 
 - HTML Form submit시 POST 전송
 
-클라이언트 Web browser가 form tag로 를 읽으면 form tag안의 클라이언트 데이터를 username=kim&age=20 형식(key - value 스타일)으로 HTTP 메시지에 저장한다. 이때 요청 메시지 안의 Content-Type 에 맞추어 형식이 정해지는 것이다.
+클라이언트 Web browser가 form tag로 를 읽으면 form tag안의 클라이언트 데이터를 username=kim&age=20 형식(key - value 스타일)으로 HTTP 메시지에 저장한다. 이때 요청 메시지 안의 타입에 맞추어 Content-Type이 정해지는 것이다.
 
 저장된 username=kim&age=20 형식 데이터를 메시지 바디에 넣고 서버에 전송한다.
 (POST 이므로 메시지 바디에 넣는다.)
