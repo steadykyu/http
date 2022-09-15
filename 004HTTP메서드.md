@@ -1,3 +1,21 @@
+## API 란?
+
+> 참고 API란?
+
+API 란?: Application Programming Interface 응용 프로그램 프로그래밍 인터페이스)는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다.
+
+> HTTP API 정의
+
+```
+An HTTP API is an API that uses Hypertext Transfer Protocol as the communication protocol between the two systems. HTTP APIs expose endpoints as API gateways for HTTP requests to have access to a server.
+```
+
+<p align="center">
+<img src ="https://github.com/steadykyu/http/blob/master/img/http5_8.png" >
+</p>
+
+두 시스템(ex)클라, 서버) 사이의 소통 **protocol**(규약)을 http(hypertext Transfer **Protocol**) 로 사용하는 API를 HTTP API 라고한다.
+
 # 1. HTTP API 만들기
 
 ## 1.1 API 요구사항
