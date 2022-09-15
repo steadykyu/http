@@ -51,7 +51,7 @@ URI(Uniform Resource Identifier)의 가장 중요한 역할은 **리소스 식�
 • 참고: 계층 구조상 상위를 컬렉션으로 보고 복수단어 사용 권장(member -> members)
 ```
 
-그러나 리소스 식별 완료, 행위 식별 x
+리소스 식별 완료, 그러나 행위 식별 x
 
 ```
 • 회원 목록 조회 /members
