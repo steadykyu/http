@@ -1,4 +1,4 @@
-# 1. HTTP 상태코드 소개
+# HTTP 상태코드 소개
 
 클라이언트가 보낸 요청의 처리 상태를 응답측에서 알려주는 기능
 
@@ -21,7 +21,7 @@
   - 451 ??? -> 4xx (Client Error)
   - 599 ??? -> 5xx (Server Error)
 
-## 1.1 1xx(Informational)
+## 1. 1xx(Informational)
 
 요청이 수신되어 처리중
 
@@ -93,7 +93,7 @@ POST
 <img src ="https://github.com/steadykyu/http/blob/master/img/http6_3.png" >
 </p>
 
-/event 에서 /new-event로 바뀌었다고 가정하자.
+/event 에서 /new-event로 바꾸어 요청한다.
 
 클라이언트가 이전 경로(/event)를 북마크나, url을 기억하고 있다가 서버에 요청을 하면 서버는 아래그림과 같이 Location 위치로 자동으로 리다이렉트 해준다.(빠르게 일어나서 사용자는 이 과정을 체감하지 못한다.)
 
@@ -136,7 +136,7 @@ POST
 
 301 이 주로 쓰이고 308은 실무에서 잘 사용하지 않는다.
 
-/event에서 /new-event로 바뀌면, 내부적으로 사용하는 데이터가 대부분 바뀌게 된다. 그러므로 GET으로 처리하는 301을 사용하는 경우가 더 많다.
+/event에서 /new-event로 바뀌면, 내부적으로 사용하는 데이터가 대부분 바뀌어 있을 것이다. 그러므로 GET으로 처리하는 301을 사용하는 경우가 더 많다.
 
 301경우, 원래는 POST로 리다이렉션하려고 설계되었었다. 그러나 많은 Web browser들 대부분이 GET으로 구현되어 있어서 표준 spec이 GET으로 바뀌었다.
 
