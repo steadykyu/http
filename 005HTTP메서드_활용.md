@@ -153,7 +153,7 @@ detail option들의 내용은 사용때마다 API나 자료를 찾아보자.
 
 ## 2.4 HTTP API 데이터 전송
 
-### 2.4.2 HTTP API 데이터 전송
+### 2.4.1 HTTP API 데이터 전송
 
 <p align="center">
 <img src ="https://github.com/steadykyu/http/blob/master/img/http5_7.png" >
@@ -183,6 +183,10 @@ detail option들의 내용은 사용때마다 API나 자료를 찾아보자.
   - TEXT, XML, JSON 등등
 
   - 이전에는 XML이 표준이었으나 최근에는 JSON이 표준이 되었다.
+
+> 읽기 전에
+
+004HTTP메서드.md 에서 API 설계요청을 받아 HTTP 메서드를 사용했던 기억을 되살려보자. 
 
 ### 2.4.3 HTTP API 설계 예시
 
